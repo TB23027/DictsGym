@@ -1,13 +1,23 @@
 members = {
-    "101": {"Name": "Alice Smith", "Age": 25, "Membership Type": "Premium", "Monthly Fee": 100.0},
-    "102": {"Name": "Bob Johnson", "Age": 30, "Membership Type": "Basic", "Monthly Fee": 30.0},
-    "103": {"Name": "Charlie Brown", "Age": 22, "Membership Type": "Student", "Monthly Fee": 20.0}
+    "101": {
+        "Name": "Alice Smith", "Age": 25, 
+        "Membership Type": "Premium", "Monthly Fee": 100.0},
+    "102": {
+        "Name": "Bob Johnson", "Age": 30, 
+        "Membership Type": "Basic", "Monthly Fee": 30.0},
+    "103": {
+        "Name": "Charlie Brown", "Age": 22, 
+        "Membership Type": "Student", "Monthly Fee": 20.0}
 }
 
 def view_members():
     for member_id, details in members.items():
-        print(f"ID: {member_id}, Name: {details['Name']}, Age: {details['Age']}, "
-              f"Membership Type: {details['Membership Type']}, Monthly Fee: {details['Monthly Fee']}")
+        print(
+            f"ID: {member_id},\
+            Name: {details['Name']}, Age: {details['Age']}, "
+            f"Membership Type: {details['Membership Type']}, \
+            Monthly Fee: {details['Monthly Fee']}"
+            )
 
 def add_member():
     new_id = input("Enter the new member's ID: ")
@@ -15,7 +25,11 @@ def add_member():
     new_age = int(input("Enter the new member's age: "))
     new_type = input("Enter the desired membership type: ")
     new_fee = float(input("Enter the monthly fee: "))
-    members[new_id] = {"Name": new_name, "Age": new_age, "Membership Type": new_type, "Monthly Fee": new_fee}
+    members[new_id] = {
+    "Name": new_name, "Age": new_age, 
+    "Membership Type": new_type, "Monthly Fee": new_fee
+    
+    }
     print(f"Member {new_name} added successfully.")
 
 def update_member():
@@ -25,7 +39,10 @@ def update_member():
         updated_age = int(input("Enter the updated age: "))
         updated_type = input("Enter the updated membership type: ")
         updated_fee = float(input("Enter the updated monthly fee: "))
-        members[update_id] = {"Name": updated_name, "Age": updated_age, "Membership Type": updated_type, "Monthly Fee": updated_fee}
+        members[update_id] = {
+        "Name": updated_name, "Age": updated_age, 
+        "Membership Type": updated_type, "Monthly Fee": updated_fee
+        }
         print(f"Member {updated_name} updated successfully.")
     else:
         print("Member not found.")
@@ -39,11 +56,17 @@ def delete_member():
         print("Member not found.")
 
 def search_member():
-    search_id = input("Enter the ID of the member you would like to search for: ")
+    search_id = input(
+        "Enter the ID of the member you would like to search for: "
+        )
     if search_id in members:
         details = members[search_id]
-        print(f"ID: {search_id}, Name: {details['Name']}, Age: {details['Age']}, "
-              f"Membership Type: {details['Membership Type']}, Monthly Fee: {details['Monthly Fee']}")
+        print(
+            f"ID: {search_id}, Name: {details['Name']}, \
+            Age: {details['Age']}, "
+            f"Membership Type: {details['Membership Type']}, \
+            Monthly Fee: {details['Monthly Fee']}"
+            )
     else:
         print("Member not found.")
 
@@ -77,3 +100,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
