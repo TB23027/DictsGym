@@ -24,7 +24,8 @@ members = {
 def view_members():
     for member_id, details in members.items():
         print(
-            f"ID: {member_id}, Name: {details['Name']}, Age: {details['Age']}, "
+            f"ID: {member_id}, Name: {details['Name']}, \
+            Age: {details['Age']}, "
             f"Membership Type: {details['Membership Type']}, Monthly Fee: "
             f"{details['Monthly Fee']}"
             )
